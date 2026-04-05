@@ -1,5 +1,5 @@
 .env
 __pycache__/
-vector_store/
+# vector_store/
 *.pyc
 .venv/
