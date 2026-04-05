@@ -22,7 +22,7 @@ CHROMA_PATH = str(current_dir.parent / "vector_store" / "chroma_db")
 embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
 vector_db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embeddings)
-print(f"DEBUG: Vector DB loaded with {len(vector_db.get()['ids'])} documents.")
+#print(f"DEBUG: Vector DB loaded with {len(vector_db.get()['ids'])} documents.")
 
 
 
@@ -85,8 +85,8 @@ def get_boosted_query(data):
     purpose = str(data.get('purpose_raw') or "General")
     # this has been done to increase the relevance of retrieved chunks with user query
     if not history or len(history) == 0:
-        boosted = f"{country.upper()} {purpose} visa eligibility documents requirements"
-        print(f"[DEBUG] Applying 90% Boost Query: {boosted}")
+        boosted = f" {user_input} {country.upper()} {purpose} visa eligibility documents requirements"
+        #print(f"[DEBUG] Applying 90% Boost Query: {boosted}")
         return boosted
     
     # For follow-up questions, LLM will rephrase

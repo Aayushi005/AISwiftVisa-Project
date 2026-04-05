@@ -83,34 +83,37 @@ st.markdown("""
     """, unsafe_allow_html=True)
 # --- SIDEBAR: USER PROFILE ---
 with st.sidebar:
-    st.title(" 👤 User Profile")
-    st.divider()
+    st.title(" 📋 User Profile")
+    
     st.info("Fill this out before starting the chat.")
     name = st.text_input("Full Name")
-    age = st.number_input("Age", min_value=1, max_value=100, value=22)
+    age = st.number_input("Age", min_value=1, max_value=100, value=1)
     edu = st.selectbox("Education", ["High School", "Graduation", "Masters", "PhD", "Other"])
-    income = st.text_input("Employment/Income Status" ,placeholder="e.g. Unemployed/employed")
+    income = st.text_input("Employment/Income Status", placeholder="e.g. Unemployed/employed")
     target_country = st.selectbox("Target Country", ["Usa", "Uk", "Canada"])
-    purpose = st.text_input("Purpose of Visit (e.g., Study/Tourist/Work)")
+    purpose = st.text_input("Purpose of Visit", placeholder="e.g. Study/Work/Visit")
     home = st.text_input("Your Country")
-    
+           
     user_profile = {
         "name": name,
-          "age": age, 
-          "edu": edu,
-        "income": income, 
+        "age": age,
+        "edu": edu,
+        "income": income,
         "target_country": target_country,
         "purpose": purpose,
-        "home": home
+        "home": home 
     }
-    
     st.divider()
-    if st.button("CLEAR CHAT HISTORY"):
+    
+    # --- SIMPLE CLEAR CHAT BUTTON ---
+    if st.button("Clear Chat History"):
         st.session_state.messages = []
         st.session_state.session_id = f"st_{int(time.time())}"
-        st.success("Chat history wiped!") # Shows a green checkmark briefly
-        time.sleep(0.5)
         st.rerun()
+
+   
+
+        
 #---MAIN CHAT AREA---
 st.title(f" AISwiftVisa: {target_country.upper()} Consultant")
 
