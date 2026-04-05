@@ -31,3 +31,4 @@ streamlit
 chromadb
 pypdf
 pysqlite3-binary
+langchain-groq
