@@ -3,8 +3,8 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 import time
-import newMain
-from newMain import chat_with_visa_bot # Import from newMain
+import main
+from main import chat_with_visa_bot # Import from main
 
 
 st.set_page_config(page_title="AISwiftVisa", layout="wide",page_icon="✈️")
@@ -49,7 +49,7 @@ st.markdown("""
         padding: 15px;
     }
     /* User Message - Light Indigo Tint */
-    .stChatMessage[data-testid="stChatMessageUser"] {
+    .stChatMessage[data-testid="stChatMessageUser"]
         background-color: #EEF2FF !important;
         border: 1px solid #C7D2FE !important;
     }
