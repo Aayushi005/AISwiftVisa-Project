@@ -3,3 +3,5 @@ __pycache__/
 # vector_store/
 *.pyc
 .venv/
+scripts/test_*.py
+scripts/*.json
