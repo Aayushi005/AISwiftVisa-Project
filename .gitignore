@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 scripts/test_*.py
 scripts/*.json
+scripts/prompt_*.py
